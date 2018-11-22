@@ -27,7 +27,7 @@ defmodule ExdStreams.Streams.StreamHydrator do
     if !connected? do
       :timer.sleep(2000)
       Logger.info "[#{node()}] Hydrating stream processes"
-      streams = StreamService.list()
+      streams = StreamService.list(%{system: true})
       pids =
         for stream <- streams do
           StreamScheduler.schedule(stream)

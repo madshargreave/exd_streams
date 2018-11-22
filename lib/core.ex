@@ -14,7 +14,7 @@ defmodule ExdStreams do
     # Define workers and child supervisors to be supervised
     children = [
       supervisor(ExdStreamsCluster.Supervisor, []),
-      supervisor(ExdStreamsWeb.Endpoint, []),
+      supervisor(ExdStreams.Api.Supervisor, []),
       supervisor(ExdStreams.Supervisor, []),
     ]
 

@@ -19,7 +19,7 @@ config :logger, :console,
   metadata: [:user_id]
 
 config :mnesia,
-   dir: 'data/#{Mix.env}'
+   dir: 'priv/data/#{Mix.env}'
 
 config :exd,
   plugins: [

@@ -24,7 +24,7 @@ defmodule ExdStreams.Store.KeyValueStore do
   @doc """
   Update all the given key/value pairs
   """
-  @callback put_all([key, value]) :: :ok | {:error, term}
+  @callback put_all([{key, value}]) :: :ok | {:error, term}
 
   @doc """
   Delete the value from the store if one is present

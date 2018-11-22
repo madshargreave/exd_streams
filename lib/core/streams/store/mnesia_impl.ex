@@ -15,8 +15,8 @@ defmodule ExdStreams.Streams.Store.MnesiaImpl do
   end
 
   @impl true
-  def list(user_id) do
-    ops = fn -> Mnesia.match_object({:streams, :_, user_id, :_, :_, :_}) end
+  def list(role_id) do
+    ops = fn -> Mnesia.match_object({:streams, :_, role_id, :_, :_, :_}) end
     case Mnesia.transaction(ops) do
       {:atomic, results} ->
         convert(results)
@@ -38,7 +38,7 @@ defmodule ExdStreams.Streams.Store.MnesiaImpl do
   def save(stream) do
     ops =
       fn ->
-        Mnesia.write({:streams, stream.id, stream.user_id, stream.name, stream.query, stream.created_at})
+        Mnesia.write({:streams, stream.id, stream.role_id, stream.name, stream.query, stream.created_at})
       end
     case Mnesia.transaction(ops) do
       {:atomic, :ok} ->
@@ -52,20 +52,20 @@ defmodule ExdStreams.Streams.Store.MnesiaImpl do
   end
 
   defp convert(%Stream{} = stream) do
-    {:streams, stream.id, stream.user_id, stream.name, stream.query, stream.created_at}
+    {:streams, stream.id, stream.role_id, stream.name, stream.query, stream.created_at}
   end
   defp convert(streams) when is_list(streams), do: for stream <- streams, do: convert(stream)
   defp convert({
     _table,
     id,
-    user_id,
+    role_id,
     name,
     query,
     created_at
   }) do
     %Stream{
       id: id,
-      user_id: user_id,
+      role_id: role_id,
       name: name,
       query: query,
       created_at: created_at

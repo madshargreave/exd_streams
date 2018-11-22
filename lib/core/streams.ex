@@ -8,8 +8,8 @@ defmodule ExdStreams.Streams do
 
   defdelegate list_streams, to: StreamService, as: :list
   defdelegate get_stream!(id), to: StreamService, as: :get!
-  defdelegate create_stream(attrs), to: StreamService, as: :create
-  defdelegate delete_stream(id), to: StreamService, as: :delete
+  defdelegate create_stream(role, attrs), to: StreamService, as: :create
+  defdelegate delete_stream(role, id), to: StreamService, as: :delete
 
 end
 
