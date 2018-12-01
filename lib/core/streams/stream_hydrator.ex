@@ -4,7 +4,9 @@ defmodule ExdStreams.Streams.StreamHydrator do
   """
   require Logger
   use GenServer
-  alias ExdStreams.Streams.{StreamScheduler, StreamService}
+
+  alias ExdStreams.Scheduling
+  alias ExdStreams.Streams.StreamService
 
   # Client
 
@@ -27,10 +29,10 @@ defmodule ExdStreams.Streams.StreamHydrator do
     if !connected? do
       :timer.sleep(2000)
       Logger.info "[#{node()}] Hydrating stream processes"
-      streams = StreamService.list(%{system: true})
+      streams = StreamService.list(%{id: "system", system: true})
       pids =
         for stream <- streams do
-          StreamScheduler.schedule(stream)
+          Scheduling.schedule(stream)
         end
         |> Enum.reject(&Kernel.match?({:error, _}, &1))
         |> Enum.map(&elem(&1, 1))

@@ -1,11 +1,11 @@
-defmodule ExdStreams.Streams.Store.MnesiaImpl do
+defmodule ExdStreams.Tables.Store.MnesiaImpl do
   @moduledoc false
   import Ecto.Query
 
-  alias ExdStreams.Streams.Stream
+  alias ExdStreams.Tables.Table
   alias ExdStreams.Core.Repo
 
-  @behaviour ExdStreams.Streams.StreamStore
+  @behaviour ExdStreams.Tables.TableStore
 
   @impl true
   def list do

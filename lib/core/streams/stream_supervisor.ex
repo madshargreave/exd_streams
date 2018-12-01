@@ -8,7 +8,7 @@ defmodule ExdStreams.Streams.Supervisor do
 
   def init([args]) do
     children = [
-      StreamHydrator
+      # StreamHydrator
     ]
 
     Supervisor.init(children, strategy: :one_for_one)

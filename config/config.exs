@@ -21,6 +21,17 @@ config :logger, :console,
 config :mnesia,
    dir: 'priv/data/#{Mix.env}'
 
+config :ecto_mnesia,
+  host: {:system, :atom, "MNESIA_HOST", Kernel.node()},
+  storage_type: {:system, :atom, "MNESIA_STORAGE_TYPE", :disc_only_copies}
+
+config :exd_streams, ecto_repos: [ExdStreams.Core.Repo]
+config :exd_streams, ExdStreams.Core.Repo,
+  adapter: EctoMnesia.Adapter
+
+config :exd_streams, ExdStreams.Core.Dispatcher,
+  adapter: GenDispatcher.LocalDispatcher
+
 config :exd,
   plugins: [
     Exd.Plugin.RedisStream

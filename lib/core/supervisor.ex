@@ -7,6 +7,7 @@ defmodule ExdStreams.Supervisor do
 
   def init([args]) do
     children = [
+      {ExdStreams.Core.Repo, []},
       {ExdStreams.Streams.Supervisor, []}
     ]
 
