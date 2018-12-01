@@ -1,0 +1,3 @@
+CREATE TABLE coins AS (
+
+);

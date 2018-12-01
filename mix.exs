@@ -18,7 +18,7 @@ defmodule ExdStreams.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {ExdStreams, []},
+      mod: {ExdStreams.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -34,7 +34,7 @@ defmodule ExdStreams.Mixfile do
     [
       {:exd, path: "../exd"},
       {:exd_redis, path: "../exd_plugin_redis"},
-      {:gen_dispatcher, ">= 0.0.0"},
+      {:gen_dispatcher, "~> 0.2.0"},
       {:ecto_mnesia, "~> 0.9.0"},
       {:ecto, "~> 2.1.6"},
       # {:mnesia_rocksdb, git: "git@github.com:arpunk/mnesia_rocksdb.git", tag: "include-sext"},

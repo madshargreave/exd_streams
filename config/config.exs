@@ -29,12 +29,18 @@ config :exd_streams, ecto_repos: [ExdStreams.Core.Repo]
 config :exd_streams, ExdStreams.Core.Repo,
   adapter: EctoMnesia.Adapter
 
+# Core
 config :exd_streams, ExdStreams.Core.Dispatcher,
   adapter: GenDispatcher.LocalDispatcher
 
+# Processing
+config :exd_streams, ExdStreams.Processing.MaterialStore,
+  adapter: ExdStreams.Store.Mnesia
+
 config :exd,
   plugins: [
-    Exd.Plugin.RedisStream
+    Exd.Plugin.RedisStream,
+    Exd.Plugin.TableSink
   ]
 
 # Import environment specific config. This must remain at the bottom
