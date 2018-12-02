@@ -1,4 +1,4 @@
-defmodule ExdStreams.Connection.SessionSupervisor do
+defmodule ExdStreams.Connection.Sessions.Supervisor do
   @moduledoc false
   use DynamicSupervisor
   alias ExdStreams.Connection.Session

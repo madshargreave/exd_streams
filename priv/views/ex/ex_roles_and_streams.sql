@@ -18,7 +18,7 @@ CREATE TABLE ex_roles_and_streams AS (
             IF(type = 'streams.created', 1, -1)
         ) AS streams
     FROM ex_all_activites a
-    WHERE type = 'stream.created' or type = 'stream.deleted'
+    WHERE type = 'stream.created' OR type = 'stream.deleted'
     GROUP BY role_id
 );
 

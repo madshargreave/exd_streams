@@ -1,10 +1,10 @@
-defmodule ExdStreams.Connection.Session do
+defmodule ExdStreams.Connection.Sessions.Session do
   @moduledoc """
   An authenticated session
   """
   use GenServer
 
-  alias ExdStreams.SessionRegistry
+  alias ExdStreams.Connection.SessionRegistry
   alias ExdStreams.Api.Executable
 
   defstruct [:role, :started_at]
