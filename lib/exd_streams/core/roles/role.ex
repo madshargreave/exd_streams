@@ -12,8 +12,7 @@ defmodule ExdStreams.Roles.Role do
   end
 
   def create_admin_changeset(role, attrs) do
-    %__MODULE__{}
-    |> create_user_changeset(role, attrs)
+    create_user_changeset(role, attrs)
     |> put_change(:admin, true)
   end
 

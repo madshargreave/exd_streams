@@ -1,4 +1,4 @@
-defmodule ExdStreams.Streams.StreamWorker do
+defmodule ExdStreams.Processing.Worker do
   @moduledoc """
   Wraps a supervised Exd query
   """

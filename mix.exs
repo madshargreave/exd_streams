@@ -37,6 +37,7 @@ defmodule ExdStreams.Mixfile do
       {:gen_dispatcher, "~> 0.2.0"},
       {:ecto_mnesia, "~> 0.9.0"},
       {:ecto, "~> 2.1.6"},
+      {:redix, ">= 0.0.0"},
       # {:mnesia_rocksdb, git: "git@github.com:arpunk/mnesia_rocksdb.git", tag: "include-sext"},
       # {:sext, "~> 1.4", manager: :rebar, override: true},
       {:horde, "~> 0.3.0"},

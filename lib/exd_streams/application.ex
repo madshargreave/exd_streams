@@ -15,6 +15,7 @@ defmodule ExdStreams.Application do
     children = [
       supervisor(ExdStreams.Cluster.Supervisor, []),
       supervisor(ExdStreams.Connection.Supervisor, []),
+      supervisor(ExdStreams.Plugins.Supervisor, []),
       supervisor(ExdStreams.Core.Supervisor, []),
     ]
 

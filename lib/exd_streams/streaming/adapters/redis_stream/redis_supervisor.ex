@@ -1,14 +1,14 @@
-defmodule ExdStreams.Streams.Supervisor do
+defmodule ExdStreams.Plugins.Supervisor do
   use Supervisor
-  alias ExdStreams.Streams.StreamHydrator
+  alias ExdStreams.Query.StreamPlugin.Redix, as: RedixPool
 
-  def start_link(args \\ []) do
+  def start_link(args) do
     Supervisor.start_link(__MODULE__, [args], name: __MODULE__)
   end
 
   def init([args]) do
     children = [
-      # StreamHydrator
+      RedixPool
     ]
 
     Supervisor.init(children, strategy: :one_for_one)

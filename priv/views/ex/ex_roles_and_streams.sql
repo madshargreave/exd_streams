@@ -17,18 +17,18 @@ CREATE TABLE ex_roles_and_streams AS (
         SUM(
             IF(type = 'streams.created', 1, -1)
         ) AS streams
-    FROM ex_all_activites a
+    FROM `ex_all_activites` a
     WHERE type = 'stream.created' OR type = 'stream.deleted'
     GROUP BY role_id
 );
 
 CREATE STREAM notifications AS (
-    INSERT INTO emails(to, from, subject, content)
+    INSERT INTO `emails` (to, from, subject, content)
     SELECT STREAM
         s.email AS to,
         'notifications@jobber.io' AS from,
         'New jobs received' AS subject,
         j.description AS content
-    FROM jobs j
-    JOIN subscribers s ON j.category IN s.categories
+    FROM `jobs` j
+    JOIN `subscribers` s ON j.category IN s.categories
 )
