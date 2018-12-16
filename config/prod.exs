@@ -61,4 +61,9 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
+
+config :exd_streams, ecto_repos: [ExdStreams.Core.Repo]
+config :exd_streams, ExdStreams.Core.Repo,
+  adapter: EctoMnesia.Adapter
+
 import_config "prod.secret.exs"

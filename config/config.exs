@@ -27,7 +27,7 @@ config :ecto_mnesia,
 
 config :exd_streams, ecto_repos: [ExdStreams.Core.Repo]
 config :exd_streams, ExdStreams.Core.Repo,
-  adapter: EctoMnesia.Adapter
+  adapter: Ecto.Adapters.Postgres
 
 # Core
 config :exd_streams, ExdStreams.Core.Dispatcher,
@@ -36,6 +36,9 @@ config :exd_streams, ExdStreams.Core.Dispatcher,
 # Processing
 config :exd_streams, ExdStreams.Processing.MaterialStore,
   adapter: ExdStreams.Store.Mnesia
+
+config :exd_streams, ExdStreams.Store.RelationalStore.RecordRepo,
+  adapter: Ecto.Adapters.Postgres
 
 config :exd,
   plugins: [

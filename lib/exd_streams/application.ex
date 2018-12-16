@@ -15,8 +15,12 @@ defmodule ExdStreams.Application do
     children = [
       supervisor(ExdStreams.Cluster.Supervisor, []),
       supervisor(ExdStreams.Connection.Supervisor, []),
+      supervisor(ExdStreams.Processing.Supervisor, []),
       supervisor(ExdStreams.Plugins.Supervisor, []),
       supervisor(ExdStreams.Core.Supervisor, []),
+      supervisor(ExdStreams.Store.RelationalStore.RecordRepo, []),
+      worker(ExdStreams.Store.RelationalStore, []),
+      worker(ExdStreams.Store.Mnesia, [])
     ]
 
     opts = [strategy: :one_for_one, name: ExdStreams.Supervisor]

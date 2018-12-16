@@ -9,8 +9,8 @@ defmodule ExdStreams.Connection.Supervisor do
   @impl true
   def init(args) do
     children = [
-      {Registry, name: ExdStreams.Connection.SessionRegistry, keys: :unique},
-      {ExdStreams.Connection.Session.Supervisor, []}
+      {Registry, name: ExdStreams.Connection.Sessions.SessionRegistry, keys: :unique},
+      {ExdStreams.Connection.Sessions.Supervisor, []}
     ]
     Supervisor.init(children, strategy: :one_for_one)
   end

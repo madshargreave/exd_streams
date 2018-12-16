@@ -1,4 +1,4 @@
-defmodule ExdStreams.Plugins.Supervisor do
+defmodule ExdStreams.Streaming.Plugins.Supervisor do
   use Supervisor
   alias ExdStreams.Query.StreamPlugin.Redix, as: RedixPool
 

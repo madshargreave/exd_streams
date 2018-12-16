@@ -4,7 +4,7 @@ defmodule ExdStreams.Connection.Sessions.Session do
   """
   use GenServer
 
-  alias ExdStreams.Connection.SessionRegistry
+  alias ExdStreams.Connection.Sessions.SessionRegistry
   alias ExdStreams.Api.Executable
 
   defstruct [:role, :started_at]
@@ -50,8 +50,8 @@ defmodule ExdStreams.Connection.Sessions.Session do
   @impl true
   def handle_call({:run, command}, _from, state) do
     command_with_role = Map.put(command, :role, state.role)
-    result = Executable.execute(command_with_role)
-    {:reply, result, state}
+    result = spawn fn -> Executable.execute(command_with_role) end
+    {:reply, :ok, state}
   end
 
   @impl true

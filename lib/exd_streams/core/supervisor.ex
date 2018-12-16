@@ -7,9 +7,8 @@ defmodule ExdStreams.Core.Supervisor do
 
   def init([args]) do
     children = [
-      ExdStreams.Core.Repo,
-      ExdStreams.Core.Dispatcher,
-      ExdStreams.Streams.Supervisor
+      # ExdStreams.Core.Repo,
+      ExdStreams.Core.Dispatcher
     ]
 
     Supervisor.init(children, strategy: :one_for_one)

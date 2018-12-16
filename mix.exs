@@ -33,11 +33,13 @@ defmodule ExdStreams.Mixfile do
   defp deps do
     [
       {:exd, path: "../exd"},
+      {:gen_buffer, path: "../gen_buffer"},
       {:exd_redis, path: "../exd_plugin_redis"},
       {:gen_dispatcher, "~> 0.2.0"},
       {:ecto_mnesia, "~> 0.9.0"},
       {:ecto, "~> 2.1.6"},
       {:redix, ">= 0.0.0"},
+      {:iteraptor, "~> 1.0.0"},
       # {:mnesia_rocksdb, git: "git@github.com:arpunk/mnesia_rocksdb.git", tag: "include-sext"},
       # {:sext, "~> 1.4", manager: :rebar, override: true},
       {:horde, "~> 0.3.0"},

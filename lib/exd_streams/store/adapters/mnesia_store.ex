@@ -8,9 +8,14 @@ defmodule ExdStreams.Store.Mnesia do
   alias ExdStreams.Store.BaseStore
   alias ExdStreams.Store.KeyValueStore
 
+  def start_link(opts \\ []) do
+    GenServer.start_link(__MODULE__, opts)
+  end
+
   @impl BaseStore
   def init(opts) do
     Mnesia.start()
+    Mnesia.create_table(:record, [attributes: [:id, :data]])
     state = %{}
     {:ok, state}
   end
@@ -21,8 +26,8 @@ defmodule ExdStreams.Store.Mnesia do
   end
 
   @impl KeyValueStore
-  def all(state) do
-    ops = fn -> Mnesia.match_object({state.table, :_, :_}) end
+  def all(table) do
+    ops = fn -> Mnesia.match_object({table, :_, :_}) end
     case Mnesia.transaction(ops) do
       {:atomic, results} ->
         convert(results)
@@ -30,8 +35,8 @@ defmodule ExdStreams.Store.Mnesia do
   end
 
   @impl KeyValueStore
-  def get(key, state) do
-    ops = fn -> Mnesia.match_object({state.table, key, :_}) end
+  def get(table, key) do
+    ops = fn -> Mnesia.match_object({table, key, :_}) end
     case Mnesia.transaction(ops) do
       {:atomic, [result]} ->
         {:ok, convert(result)}
@@ -41,21 +46,21 @@ defmodule ExdStreams.Store.Mnesia do
   end
 
   @impl KeyValueStore
-  def put(key, value, state) do
-    put_all([{key, value}], state)
+  def put(table, key, value) do
+    put_all(table, [{key, value}])
   end
 
   @impl KeyValueStore
-  def put_all(keys_and_values, state) do
+  def put_all(table, keys_and_values) do
     ops =
       fn ->
         for {key, value} <- keys_and_values do
-          Mnesia.write({state.table, key, value})
+          Mnesia.write({table, key, value})
         end
       end
     case Mnesia.transaction(ops) do
-      {:atomic, :ok} ->
-        {:ok, length(keys_and_values)}
+      {:atomic, results} when is_list(results) ->
+        {:ok, length(results)}
     end
   end
 

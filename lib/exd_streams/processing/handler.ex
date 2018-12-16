@@ -1,6 +1,6 @@
 defmodule ExdStreams.Processing.Handler do
   @moduledoc false
-  use GenConsumer, otp_app: :exd_streams
+  # use GenConsumer, otp_app: :exd_streams
 
   alias ExdStreams.Scheduling
   alias ExdStreams.Streams.Stream

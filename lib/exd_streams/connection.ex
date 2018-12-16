@@ -2,20 +2,20 @@ defmodule ExdStreams.Connection do
   @moduledoc """
   Public command-based API
   """
-  alias ExdStreams.Connection.{SessionSupervisor, Session}
+  alias ExdStreams.Connection.Sessions.{Supervisor, Session, SessionRegistry}
 
   @doc """
   Creates a new session
   """
   def connect(role) do
-    SessionSupervisor.start_child(role: role)
+    Supervisor.start_child(role: role)
   end
 
   @doc """
   Creates a new session
   """
   def close(role) do
-    Session.close(role)
+    Supervisor.terminate_child(role: role)
   end
 
   @doc """
