@@ -12,12 +12,7 @@ defmodule ExdStreams.Processing.Writer do
   @impl true
   def flush(events) do
     IO.inspect "Writing #{length(events)} events"
-    records =
-      events
-      |> Enum.with_index
-      |> Enum.map(fn {event, index} -> {"key_#{NaiveDateTime.utc_now}", event} end)
-
-    @store.put_all("records", records)
+    @store.put_all(events)
   end
 
 end

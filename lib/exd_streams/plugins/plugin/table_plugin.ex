@@ -9,7 +9,7 @@ defmodule ExdStreams.Query.TablePlugin do
   alias ExdStreams.Processing.Writer
 
   defmodule State do
-    defstruct [:meta, :count, :start_at]
+    defstruct [:table, :meta, :count, :start_at]
   end
 
   # Client
@@ -30,12 +30,13 @@ defmodule ExdStreams.Query.TablePlugin do
   @impl true
   def init(opts) do
     mode = Keyword.fetch!(opts, :mode)
+    table = Keyword.fetch!(opts, :table)
     meta = Keyword.get(opts, :meta, %{})
 
     count = 0
     start_at = NaiveDateTime.utc_now
 
-    state = %State{meta: meta, count: count, start_at: start_at}
+    state = %State{table: table, meta: meta, count: count, start_at: start_at}
     do_init(mode, state)
   end
   defp do_init(:source, state), do: {:producer, state}
@@ -48,6 +49,13 @@ defmodule ExdStreams.Query.TablePlugin do
 
   @impl true
   def handle_events(events, _from, state) do
+    events =
+      for event <- events,
+        do: [
+          table: state.table,
+          key: "key_#{NaiveDateTime.utc_now}",
+          value: event
+        ]
     Writer.add(events)
     count = length(events) + state.count
     {:noreply, events, %State{state | count: count}}

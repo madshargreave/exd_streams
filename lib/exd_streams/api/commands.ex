@@ -3,7 +3,7 @@ defmodule ExdStreams.Api.Commands do
   import ExdStreams.Api.BaseCommand
 
   # Queries
-  defcommand SelectCommand, [:meta, :config, :query]
+  defcommand SelectCommand, [:meta, :table, :config, :query]
 
   # Streams
   defcommand CreateStreamCommand, [:config, :name, :query]

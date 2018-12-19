@@ -34,9 +34,10 @@ defmodule ExdStreams.Mixfile do
     [
       {:exd, path: "../exd"},
       {:gen_buffer, path: "../gen_buffer"},
+      {:gen_dispatcher, ">= 0.0.0"},
       {:exd_redis, path: "../exd_plugin_redis"},
-      {:gen_dispatcher, "~> 0.2.0"},
       {:ecto_mnesia, "~> 0.9.0"},
+      {:postgrex, ">= 0.0.0"},
       {:ecto, "~> 2.1.6"},
       {:redix, ">= 0.0.0"},
       {:iteraptor, "~> 1.0.0"},

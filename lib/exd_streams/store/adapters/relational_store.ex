@@ -64,8 +64,7 @@ defmodule ExdStreams.Store.RelationalStore do
   end
 
   @impl KeyValueStore
-  def put_all(table, keys_and_values) do
-    rows = for {key, value} <- keys_and_values, do: [table: table, key: key, value: value]
+  def put_all(rows) do
     opts = [on_conflict: :replace_all, conflict_target: [:table, :key]]
     RecordRepo.insert_all(Record, rows, opts)
   end
