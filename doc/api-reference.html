@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.19.2">
+    <title>API Reference — exd_streams v0.0.2</title>
+    <link rel="stylesheet" href="dist/html-c1666276880c0f8e3769.css" />
+      <link rel="canonical" href="https://hexdocs.pm/exd_streams/api-reference.html" />
+    <script src="dist/sidebar_items-3bf6c79a8c.js"></script>
+    
+  </head>
+  <body data-type="extras">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+<div class="main">
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
+<section class="sidebar">
+
+  <a href="api-reference.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+exd_streams      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.0.2
+      </h2>
+    </div>
+  </a>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
+  </form>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+<h1>
+  <small class="visible-xs">exd_streams v0.0.2</small>
+  API Reference
+</h1>
+
+  <section class="details-list">
+    <h2 id="modules" class="section-heading">
+  <a href="#modules" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Modules
+</h2>
+
+    <div class="summary">
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.html">ExdStreams</a>
+  </div>
+    <div class="summary-synopsis"><p>ExdStreams provides a high-level and declarative interface for defining
+topologies of streams</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Api.BaseCommand.html">ExdStreams.Api.BaseCommand</a>
+  </div>
+    <div class="summary-synopsis"><p>Protocol for executable commands</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Api.Executable.html">ExdStreams.Api.Executable</a>
+  </div>
+    <div class="summary-synopsis"><p>Dynamic dispatch for commands</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Application.html">ExdStreams.Application</a>
+  </div>
+    <div class="summary-synopsis"><p>ExdStreams keeps the contexts that define your domain
+and business logic</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Cluster.html">ExdStreams.Cluster</a>
+  </div>
+    <div class="summary-synopsis"><p>Cluster supervisor</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Cluster.Connector.html">ExdStreams.Cluster.Connector</a>
+  </div>
+    <div class="summary-synopsis"><p>Behaviour for cluster connectors</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Cluster.HordeConnector.html">ExdStreams.Cluster.HordeConnector</a>
+  </div>
+    <div class="summary-synopsis"><p>Module responsible for connecting hordes</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Cluster.MnesiaConnector.html">ExdStreams.Cluster.MnesiaConnector</a>
+  </div>
+    <div class="summary-synopsis"><p>Registers and starts Mnesia</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Cluster.Supervisor.html">ExdStreams.Cluster.Supervisor</a>
+  </div>
+    <div class="summary-synopsis"><p>Cluster supervisor</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Connection.html">ExdStreams.Connection</a>
+  </div>
+    <div class="summary-synopsis"><p>Public command-based API</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Connection.Sessions.Session.html">ExdStreams.Connection.Sessions.Session</a>
+  </div>
+    <div class="summary-synopsis"><p>An authenticated session</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Core.Entity.html">ExdStreams.Core.Entity</a>
+  </div>
+    <div class="summary-synopsis"><p>Base entity for entities</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Core.Supervisor.html">ExdStreams.Core.Supervisor</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Ecto.Casters.html">ExdStreams.Ecto.Casters</a>
+  </div>
+    <div class="summary-synopsis"><p>Common casting functions for Exd queries</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Ecto.Validations.html">ExdStreams.Ecto.Validations</a>
+  </div>
+    <div class="summary-synopsis"><p>Common validations for Exd queries</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.EventHandler.html">ExdStreams.EventHandler</a>
+  </div>
+    <div class="summary-synopsis"><p>Receives events</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Logging.html">ExdStreams.Logging</a>
+  </div>
+    <div class="summary-synopsis"><p>Context providing logging functionality</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Plugins.StreamPlugin.RedisPool.html">ExdStreams.Plugins.StreamPlugin.RedisPool</a>
+  </div>
+    <div class="summary-synopsis"><p>Manages a pool of redix connections</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Plugins.Supervisor.html">ExdStreams.Plugins.Supervisor</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Plugins.Utils.html">ExdStreams.Plugins.Utils</a>
+  </div>
+    <div class="summary-synopsis"><p>Utils</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Processing.Store.html">ExdStreams.Processing.Store</a>
+  </div>
+    <div class="summary-synopsis"><p>Delegates persistence to state stores</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Processing.Stores.MaterialStore.html">ExdStreams.Processing.Stores.MaterialStore</a>
+  </div>
+    <div class="summary-synopsis"><p>Database for materialised streams</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Processing.Supervisor.html">ExdStreams.Processing.Supervisor</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Processing.Worker.html">ExdStreams.Processing.Worker</a>
+  </div>
+    <div class="summary-synopsis"><p>Wraps a supervised Exd query</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Processing.Writer.html">ExdStreams.Processing.Writer</a>
+  </div>
+    <div class="summary-synopsis"><p>Write buffer for persisting events to materialised store</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Query.Builder.html">ExdStreams.Query.Builder</a>
+  </div>
+    <div class="summary-synopsis"><p>Helper functions for constructing Exd queries</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Query.FilePlugin.html">ExdStreams.Query.FilePlugin</a>
+  </div>
+    <div class="summary-synopsis"><p>Plugin that joins a stream of data with a persisted materialised view</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Query.FilePlugin.State.html">ExdStreams.Query.FilePlugin.State</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Query.StreamPlugin.html">ExdStreams.Query.StreamPlugin</a>
+  </div>
+    <div class="summary-synopsis"><p>Plugin that joins a stream of data with a persisted materialised view</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Query.StreamPlugin.State.html">ExdStreams.Query.StreamPlugin.State</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Query.TablePlugin.html">ExdStreams.Query.TablePlugin</a>
+  </div>
+    <div class="summary-synopsis"><p>Plugin that joins a stream of data with a persisted materialised view</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Query.TablePlugin.State.html">ExdStreams.Query.TablePlugin.State</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Roles.html">ExdStreams.Roles</a>
+  </div>
+    <div class="summary-synopsis"><p>The queries context</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Roles.Role.html">ExdStreams.Roles.Role</a>
+  </div>
+    <div class="summary-synopsis"><p>A role</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Roles.RoleService.html">ExdStreams.Roles.RoleService</a>
+  </div>
+    <div class="summary-synopsis"><p>Roles service</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Scheduling.html">ExdStreams.Scheduling</a>
+  </div>
+    <div class="summary-synopsis"><p>Context of process scheduling</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Scheduling.HordeScheduler.html">ExdStreams.Scheduling.HordeScheduler</a>
+  </div>
+    <div class="summary-synopsis"><p>Schedules stream processes in cluster of connected nodes</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Scheduling.Scheduler.html">ExdStreams.Scheduling.Scheduler</a>
+  </div>
+    <div class="summary-synopsis"><p>Behaviour for process schedulers</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Store.html">ExdStreams.Store</a>
+  </div>
+    <div class="summary-synopsis"><p>Store implementation</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Store.BaseStore.html">ExdStreams.Store.BaseStore</a>
+  </div>
+    <div class="summary-synopsis"><p>A behaviour for any state store</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Store.ElasticStore.html">ExdStreams.Store.ElasticStore</a>
+  </div>
+    <div class="summary-synopsis"><p>An ElasticSearch based store</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Store.IndexStore.html">ExdStreams.Store.IndexStore</a>
+  </div>
+    <div class="summary-synopsis"><p>A behaviour for key-value based state stores</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Store.KeyValueStore.html">ExdStreams.Store.KeyValueStore</a>
+  </div>
+    <div class="summary-synopsis"><p>A behaviour for key-value based state stores</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Store.Mnesia.html">ExdStreams.Store.Mnesia</a>
+  </div>
+    <div class="summary-synopsis"><p>A Mnesia based state store</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Store.RedisStore.html">ExdStreams.Store.RedisStore</a>
+  </div>
+    <div class="summary-synopsis"><p>A redis-based state store</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Store.RelationalStore.html">ExdStreams.Store.RelationalStore</a>
+  </div>
+    <div class="summary-synopsis"><p>A Mnesia based state store</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Store.RelationalStore.Record.html">ExdStreams.Store.RelationalStore.Record</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Store.RelationalStore.RecordRepo.html">ExdStreams.Store.RelationalStore.RecordRepo</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Streaming.Plugins.Supervisor.html">ExdStreams.Streaming.Plugins.Supervisor</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Streaming.RedisStream.html">ExdStreams.Streaming.RedisStream</a>
+  </div>
+    <div class="summary-synopsis"><p>Stream implementation based on Redis streams</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Streaming.StreamStore.html">ExdStreams.Streaming.StreamStore</a>
+  </div>
+    <div class="summary-synopsis"><p>A behaviour for key-value based state stores</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Streams.html">ExdStreams.Streams</a>
+  </div>
+    <div class="summary-synopsis"><p>The queries context</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Streams.Stream.html">ExdStreams.Streams.Stream</a>
+  </div>
+    <div class="summary-synopsis"><p>A stream represents a continous stream of records</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Streams.StreamService.html">ExdStreams.Streams.StreamService</a>
+  </div>
+    <div class="summary-synopsis"><p>Streams service</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Tables.html">ExdStreams.Tables</a>
+  </div>
+    <div class="summary-synopsis"><p>The queries context</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Tables.Table.html">ExdStreams.Tables.Table</a>
+  </div>
+    <div class="summary-synopsis"><p>A view represents a snapshots of the latest stream of records for a particular stream</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Tables.Table.Index.html">ExdStreams.Tables.Table.Index</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Tables.TableHelpers.html">ExdStreams.Tables.TableHelpers</a>
+  </div>
+    <div class="summary-synopsis"><p>Common helpers for tables</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="ExdStreams.Tables.TableService.html">ExdStreams.Tables.TableService</a>
+  </div>
+    <div class="summary-synopsis"><p>Tables service</p>
+</div>
+</div>
+    </div>
+  </section>
+
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/html-c1666276880c0f8e3769.js"></script>
+  
+  </body>
+</html>
+

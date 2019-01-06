@@ -4,7 +4,7 @@ defmodule ExdStreams.Mixfile do
   def project do
     [
       app: :exd_streams,
-      version: "0.0.2",
+      version: "0.0.3",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env),
       description: description(),
@@ -46,11 +46,6 @@ defmodule ExdStreams.Mixfile do
       {:libcluster, "~> 3.0.1"},
       {:event_bus, "~> 1.6.0"},
       {:elixir_uuid, "~> 1.2"},
-      {:phoenix, "~> 1.3.3"},
-      {:phoenix_pubsub, "~> 1.0"},
-      {:phoenix_html, "~> 2.10"},
-      {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:cowboy, "~> 1.0"},
       {:mix_test_watch, "~> 0.8", only: :dev, runtime: false},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
