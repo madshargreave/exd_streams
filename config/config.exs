@@ -33,6 +33,9 @@ config :exd_streams, ExdStreams.Core.Repo,
 config :exd_streams, ExdStreams.Core.Dispatcher,
   adapter: GenDispatcher.LocalDispatcher
 
+config :exd_streams, ExdStreams.Plugins.Dispatcher,
+  adapter: GenDispatcher.LocalDispatcher
+
 # Processing
 config :exd_streams, ExdStreams.Processing.MaterialStore,
   adapter: ExdStreams.Store.Mnesia
