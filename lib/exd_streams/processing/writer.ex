@@ -5,7 +5,7 @@ defmodule ExdStreams.Processing.Writer do
   use GenBuffer,
     otp_app: :exd_streams,
     interval: 1000,
-    limit: 100
+    limit: 500
 
   @store Application.get_env(:exd_streams, :material_store_adapter) || ExdStreams.Store.RelationalStore
 

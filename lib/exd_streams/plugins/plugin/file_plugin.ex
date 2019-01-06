@@ -1,4 +1,4 @@
-defmodule ExdStreams.Query.TablePlugin do
+defmodule ExdStreams.Query.FilePlugin do
   @moduledoc """
   Plugin that joins a stream of data with a persisted materialised view
   """
@@ -62,8 +62,6 @@ defmodule ExdStreams.Query.TablePlugin do
           ts: NaiveDateTime.utc_now()
         }
       end
-
-    # Writer.add(transformed_events)
 
     temporary = Keyword.fetch!(state.meta, :temporary)
     Dispatcher.dispatch(%{

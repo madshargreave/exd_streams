@@ -43,17 +43,17 @@ defmodule ExdStreams.Processing.Worker do
   @impl true
   def init(stream) do
     Logger.info "Starting stream on node: #{Node.self()}"
-    query = configure_query(stream)
-    {:ok, pid} = Exd.Repo.start_link(query)
-    state =
-      %__MODULE__{
-        id: stream.id,
-        query: query,
-        coordinator: pid,
-        status: :running,
-        started_at: NaiveDateTime.utc_now
-      }
-    {:ok, state}
+    # query = configure_query(stream)
+    # {:ok, pid} = Exd.Repo.start_link(query)
+    # state =
+    #   %__MODULE__{
+    #     id: stream.id,
+    #     query: query,
+    #     coordinator: pid,
+    #     status: :running,
+    #     started_at: NaiveDateTime.utc_now
+    #   }
+    {:ok, %{}}
     rescue
       exception ->
         IO.inspect {exception, System.stacktrace()}
@@ -72,17 +72,6 @@ defmodule ExdStreams.Processing.Worker do
 
   defp via(id) do
     {:via, Horde.Registry, {StreamRegistry, id}}
-  end
-
-  defp configure_query(stream) do
-    case stream.query.from do
-      {aliaz, {:redis_stream, [source] = args}} ->
-        static = [host: "localhost", group: stream.id, consumer: stream.id]
-        args = [source, static]
-        %Exd.Query{stream.query | from: {aliaz, {:redis_stream, args}}}
-      _ ->
-        stream.query
-    end
   end
 
 end

@@ -2,7 +2,6 @@ defmodule ExdStreams.Query.Builder do
   @moduledoc """
   Helper functions for constructing Exd queries
   """
-  import Exd.Query.Builder
 
   @doc """
   Returns a query that streams records from a table stream

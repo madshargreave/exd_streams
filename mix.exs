@@ -7,6 +7,8 @@ defmodule ExdStreams.Mixfile do
       version: "0.0.1",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env),
+      description: description(),
+      package: package(),
       compilers: [:phoenix] ++ Mix.compilers,
       start_permanent: Mix.env == :prod,
       deps: deps()
@@ -32,17 +34,14 @@ defmodule ExdStreams.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:exd, path: "../exd"},
-      {:gen_buffer, path: "../gen_buffer"},
+      {:exd, "~> 0.1.29"},
+      {:gen_buffer, "~> 0.1.0"},
       {:gen_dispatcher, ">= 0.0.0"},
-      {:exd_redis, path: "../exd_plugin_redis"},
       {:ecto_mnesia, "~> 0.9.0"},
       {:postgrex, ">= 0.0.0"},
       {:ecto, "~> 2.1.6"},
       {:redix, ">= 0.0.0"},
       {:iteraptor, "~> 1.0.0"},
-      # {:mnesia_rocksdb, git: "git@github.com:arpunk/mnesia_rocksdb.git", tag: "include-sext"},
-      # {:sext, "~> 1.4", manager: :rebar, override: true},
       {:horde, "~> 0.3.0"},
       {:libcluster, "~> 3.0.1"},
       {:event_bus, "~> 1.6.0"},
@@ -54,4 +53,20 @@ defmodule ExdStreams.Mixfile do
       {:cowboy, "~> 1.0"}
     ]
   end
+
+  defp description() do
+    "Utilities for working with Exd streams"
+  end
+
+  defp package() do
+    [
+      # This option is only needed when you don't want to use the OTP application name
+      name: "exd_streams",
+      # These are the default files included in the package
+      files: ~w(lib .formatter.exs mix.exs README*),
+      licenses: ["Apache 2.0"],
+      links: %{"GitHub" => "https://github.com/madshargreave/exd_streams"}
+    ]
+  end
+
 end

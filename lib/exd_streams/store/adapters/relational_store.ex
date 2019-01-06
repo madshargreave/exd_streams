@@ -20,8 +20,10 @@ defmodule ExdStreams.Store.RelationalStore do
     @foreign_key_type :string
 
     schema "records" do
-      field :table, :string
+      field :table_id, :string
       field :value, :map
+      field :state, :string
+      field :ts, :naive_datetime
     end
 
   end
@@ -41,31 +43,32 @@ defmodule ExdStreams.Store.RelationalStore do
   end
 
   @impl KeyValueStore
-  def all(table) do
+  def all(table_id) do
     RecordRepo.all(
       from r in Record,
-      where: r.table == ^table
+      where: r.table_id == ^table_id,
+      order_by: [desc: r.key]
     )
   end
 
   @impl KeyValueStore
-  def get(table, key) do
+  def get(table_id, key) do
     RecordRepo.one(
       from r in Record,
-      where: r.table == ^table and r.key == ^key
+      where: r.table_id == ^table_id and r.key == ^key
     )
   end
 
   @impl KeyValueStore
-  def put(table, key, value) do
-    row = [table: table, key: key, value: value]
-    opts = [on_conflict: :replace_all, conflict_target: [:table, :key]]
+  def put(table_id, key, value) do
+    row = [key: key, value: value]
+    opts = [on_conflict: :replace_all, conflict_target: [:key]]
     RecordRepo.insert_all(Record, [row], opts)
   end
 
   @impl KeyValueStore
   def put_all(rows) do
-    opts = [on_conflict: :replace_all, conflict_target: [:table, :key]]
+    opts = [on_conflict: :replace_all, conflict_target: [:key]]
     RecordRepo.insert_all(Record, rows, opts)
   end
 
