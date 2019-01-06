@@ -9,7 +9,6 @@ defmodule ExdStreams.Mixfile do
       elixirc_paths: elixirc_paths(Mix.env),
       description: description(),
       package: package(),
-      compilers: [:phoenix] ++ Mix.compilers,
       start_permanent: Mix.env == :prod,
       deps: deps()
     ]
